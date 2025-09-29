@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image to Sketch</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        img { max-width: 350px; margin: 10px; border: 2px solid #ccc; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Convert Image to Sketch 🎨</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload & Convert</button>
+        </form>
+
+        {% if original %}
+            <h2>Result</h2>
+            <div>
+                <h3>Original</h3>
+                <img src="{{ original }}" alt="Original">
+                <h3>Sketch</h3>
+                <img src="{{ sketch }}" alt="Sketch">
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
